@@ -2,7 +2,7 @@
 <!-- 
 MIT License
 
-@file      jimmbot_core.launch
+@file      jimmbot_sensors.launch
 @author    Mergim Halimi (m.halimi123@gmail.com)
 @copyright Copyright (c) 2021, mhRobotics, Inc., All rights reserved.
 
@@ -26,12 +26,33 @@ SOFTWARE.
  -->
 <launch>
 
+  <!-- Lidar -->
+  <include file="$(find ydlidar_ros)/launch/lidar.launch" />
+
   <!-- Imu -->
+  <arg name="razor_config_file" default="$(find razor_imu_9dof)/config/my_razor.yaml"/>
+  <node pkg="razor_imu_9dof" type="imu_node.py" name="imu_node" output="screen">
+    <rosparam file="$(arg razor_config_file)" command="load"/>
+  </node>
 
   <!-- Kinect Front -->
+  <include file="$(find openni_launch)/launch/openni.launch" >
+    <arg name="camera" value="kinect_front" />
+    <arg name="device_id" value="B00367726232107B" />
+    <arg name="publish_tf" value="true" />
+  </include>
 
-  <!-- Kinect Rear -->
+  <node pkg="tf" type="static_transform_publisher" name="physical_kinect_to_model_front"
+    args="-0.18 0.0 0.1 0.0 0.0 0.0 /kinect_front_link /kinect_front_depth_frame 40" />
 
-  <!-- Lidar -->
+  <!-- Kinect Back -->
+  <include file="$(find openni_launch)/launch/openni.launch" >
+    <arg name="camera" value="kinect_back" />
+    <arg name="device_id" value="A00365927030043A" />
+    <arg name="publish_tf" value="true" />
+  </include>
+
+  <node pkg="tf" type="static_transform_publisher" name="physical_kinect_to_model_back"
+    args="-0.18 0.0 0.1 0.0 0.0 0.0 /kinect_back_link /kinect_back_depth_frame 40" />
 
 </launch>

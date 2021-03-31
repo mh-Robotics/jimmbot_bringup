@@ -29,7 +29,7 @@ SOFTWARE.
   <arg name="WHEEL_HIL" default="false" /> 
 
   <node name="serial_node" pkg="rosserial_python" type="serial_node.py" respawn="true">
-    <param name="port" value="/dev/ttyUSB0"/>
+    <param name="port" value="/dev/esp32_ros_node"/>
     <param name="baud" value="115200" />
   </node>
 
