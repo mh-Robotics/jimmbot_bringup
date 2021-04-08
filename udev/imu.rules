@@ -1,1 +1,1 @@
-KERNELS=="1-4:1.0", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE:="0666", GROUP:="dialout", SYMLINK+="imu"
+KERNEL=="ttyUSB*", KERNELS=="1-4:1.0", MODE:="0666", GROUP:="dialout", SYMLINK+="imu"

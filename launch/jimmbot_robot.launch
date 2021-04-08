@@ -30,12 +30,9 @@ SOFTWARE.
   <include file="$(find jimmbot_bringup)/launch/jimmbot_hw_communicator.launch" />
 
   <!-- Load robot sensors -->
-  <!-- <include file="$(find jimmbot_bringup)/launch/jimmbot_sensors.launch" /> -->
-
-  <!-- Lidar -->
-  <include file="$(find ydlidar_ros)/launch/lidar.launch" />
+  <include file="$(find jimmbot_bringup)/launch/jimmbot_sensors.launch" />
 
   <!-- Load jimmBOT base hardware interface and controllers -->
-  <!-- <include file="$(find jimmbot_base)/launch/jimmbot_base.launch" /> -->
+  <include file="$(find jimmbot_base)/launch/jimmbot_base.launch" />
 
 </launch>
