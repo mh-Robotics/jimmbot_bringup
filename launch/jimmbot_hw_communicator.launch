@@ -34,7 +34,7 @@ SOFTWARE.
   </node>
 
   <group if="$(arg WHEEL_HIL)" >
-    <node pkg="jimmbot_base" type="jimmbot_base_wheel_commander_node" name="robot_wheels_in_the_loop" />
+    <node pkg="jimmbot_base" type="wheel_commander" name="wheel_commander_node" />
   </group>
 
 </launch>

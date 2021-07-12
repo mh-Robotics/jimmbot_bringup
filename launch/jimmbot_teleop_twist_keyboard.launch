@@ -2,7 +2,7 @@
 <!-- 
 MIT License
 
-@file      jimmbot_robot.launch
+@file      jimmbot_teleop_twist_keyboard.launch
 @author    Mergim Halimi (m.halimi123@gmail.com)
 @copyright Copyright (c) 2021, mhRobotics, Inc., All rights reserved.
 
@@ -25,17 +25,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  -->
 <launch>
-
-  <!-- Load robot hw communicator -->
-  <include file="$(find jimmbot_bringup)/launch/jimmbot_hw_communicator.launch" />
-
-  <!-- Load robot sensors -->
-  <include file="$(find jimmbot_bringup)/launch/jimmbot_sensors.launch" />
-
-  <!-- Load jimmBOT base hardware interface and controllers -->
-  <include file="$(find jimmbot_base)/launch/base.launch" />
-
-  <!-- Load jimmBOT audio effects library -->
-  <include file="$(find jimmbot_audiofx)/launch/audiofx.launch" />
-
+  <include file="$(find jimmbot_controller)/launch/teleop_keyboard.launch" />
 </launch>

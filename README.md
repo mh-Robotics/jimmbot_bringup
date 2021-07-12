@@ -22,7 +22,7 @@ sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm
 Or install them automatically, execute:
 
 ```bash
-sh $(rospack find jimmbot_bringup)/install/install_rules.sh
+sh $(rospack find jimmbot_bringup)/install/udev-rules_focal_fossa.sh
 ```
 
 Note: Until further solution, I filter Lidar using the Port Number in my robot computer. (I have exactly the same VID and PID with ESP32)
