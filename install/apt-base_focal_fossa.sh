@@ -21,8 +21,4 @@ apt -y install \
   openssh-server \
   vim \
   zip \
-  unzip \
-  python3-rosdep \
-  python3-rosinstall \
-  python3-rosinstall-generator \
-  python3-wstool
+  unzip 

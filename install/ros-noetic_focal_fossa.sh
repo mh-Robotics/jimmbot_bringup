@@ -13,7 +13,13 @@ apt -y install ros-${ROS_DISTRO}-desktop-full
 
 echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 
-source ~/.bashrc
+sh source ~/.bashrc
+
+apt -y install \
+  python3-rosdep \
+  python3-rosinstall \
+  python3-rosinstall-generator \
+  python3-wstool 
 
 sudo rosdep init
 
