@@ -22,4 +22,7 @@ apt -y install \
   ros-${ROS_DISTRO}-rtabmap  \
   ros-${ROS_DISTRO}-rtabmap-ros \
   ros-${ROS_DISTRO}-plotjuggler \
-  ros-${ROS_DISTRO}-plotjuggler-ros
+  ros-${ROS_DISTRO}-plotjuggler-ros \
+  ros-${ROS_DISTRO}-sound-play \
+  ros-${ROS_DISTRO}-rosserial \
+  ros-${ROS_DISTRO}-interactive-marker-twist-server
