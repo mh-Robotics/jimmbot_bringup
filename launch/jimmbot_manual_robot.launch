@@ -26,8 +26,8 @@ SOFTWARE.
  -->
 <launch>
 
-  <!-- Load robot hw communicator -->
-  <include file="$(find jimmbot_bringup)/launch/jimmbot_hw_communicator.launch" />
+  <!-- Load robot hw bridge -->
+  <include file="$(find jimmbot_bringup)/launch/jimmbot_hw_bridge.launch" />
 
   <include file="$(find jimmbot_base)/launch/hardware_interface.launch" />
   

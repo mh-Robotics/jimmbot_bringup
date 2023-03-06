@@ -2,7 +2,7 @@
 <!-- 
 MIT License
 
-@file      jimmbot_hw_communicator.launch
+@file      jimmbot_hw_bridge.launch
 @author    Mergim Halimi (m.halimi123@gmail.com)
 @copyright Copyright (c) 2021, mhRobotics, Inc., All rights reserved.
 
@@ -25,16 +25,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  -->
 <launch>
-
-  <arg name="WHEEL_HIL" default="false" /> 
-
   <node name="serial_node" pkg="rosserial_python" type="serial_node.py" respawn="true">
     <param name="port" value="/dev/esp32_ros_node"/>
     <param name="baud" value="115200" />
   </node>
-
-  <group if="$(arg WHEEL_HIL)" >
-    <node pkg="jimmbot_base" type="wheel_commander" name="wheel_commander_node" />
-  </group>
-
 </launch>
